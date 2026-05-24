@@ -1,10 +1,22 @@
-<p align="left">
-  <img src="cohost/assets/img/icon.svg" alt="Cohost" width="72" height="72" />
+<p align="center">
+  <a href="https://cohost.vip">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-light.svg" />
+      <img src="assets/wordmark-dark.svg" alt="Cohost" height="56" />
+    </picture>
+  </a>
 </p>
 
-# Cohost WordPress Plugin
+<h1 align="center">Cohost for WordPress</h1>
 
-> **Show your Cohost events on your own WordPress site — your branding, your domain, your audience.** No iframes. No redirect to a third-party ticketing page. The list and per-event profile render natively in your theme.
+<p align="center">
+  Show your Cohost events on your own WordPress site — your branding, your domain, your audience. No iframes, no redirect to a third-party ticketing page; the list and per-event profile render natively in your theme.
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="https://cohost.vip"><img src="https://img.shields.io/badge/built%20by-Cohost-f97316.svg" alt="Built by Cohost" /></a>
+</p>
 
 The plugin source lives in [`./cohost`](./cohost). Zip that directory to install it on a WordPress site.
 
@@ -205,4 +217,12 @@ assets/
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
+
+---
+
+<p align="center">
+  <a href="https://cohost.vip"><strong>cohost.vip</strong></a> ·
+  <a href="https://cohost.vip/docs">Docs</a> ·
+  <a href="https://github.com/cohostvip">GitHub</a>
+</p>
