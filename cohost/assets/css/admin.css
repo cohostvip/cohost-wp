@@ -1,0 +1,46 @@
+.cohost-admin__header{
+	display:flex;
+	align-items:center;
+	gap:1rem;
+	padding:1.25rem 1.5rem;
+	margin:1rem 0 0.5rem;
+	background:#161616;
+	color:#F2F2F2;
+	border-radius:12px;
+}
+.cohost-admin__logo{
+	width:56px;
+	height:56px;
+	border-radius:12px;
+	flex:0 0 auto;
+	display:block;
+}
+.cohost-admin__title h1{
+	color:#F2F2F2;
+	margin:0;
+	font-size:1.5rem;
+	line-height:1.2;
+}
+.cohost-admin__tagline{
+	margin:.25rem 0 0;
+	color:#cbd5e1;
+	font-size:.95rem;
+}
+.cohost-admin__intro{
+	margin:.75rem 0 1.25rem;
+	max-width:760px;
+}
+.cohost-admin .form-table .description code{
+	background:#f3f4f6;
+	padding:1px 6px;
+	border-radius:4px;
+}
+.cohost-admin h2.title{
+	border-top:1px solid #e5e7eb;
+	padding-top:1rem;
+	margin-top:1.5rem;
+}
+.cohost-admin h2.title:first-of-type{
+	border-top:none;
+	padding-top:0;
+}

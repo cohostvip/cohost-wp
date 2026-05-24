@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/wp-env.json",
+	"core": "WordPress/WordPress#6.5.5",
+	"phpVersion": "8.2",
+	"plugins": [
+		"./cohost"
+	],
+	"config": {
+		"WP_DEBUG": true,
+		"WP_DEBUG_LOG": true,
+		"WP_DEBUG_DISPLAY": true,
+		"SCRIPT_DEBUG": true
+	},
+	"port": 8888,
+	"testsPort": 8889,
+	"mappings": {
+		".htaccess": "./.dev/htaccess"
+	}
+}

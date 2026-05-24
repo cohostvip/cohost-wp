@@ -1,0 +1,615 @@
+# Copyright (C) 2026 Cohost
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cohost 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cohost\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-10T00:34:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: cohost\n"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: cohost.php
+#: includes/class-cohost-blocks.php:46
+#: includes/class-cohost-settings.php:40
+#: includes/class-cohost-settings.php:41
+#: includes/class-cohost-settings.php:49
+#: includes/class-cohost-settings.php:50
+#: includes/class-cohost-settings.php:142
+msgid "Cohost"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: cohost.php
+msgid "https://cohost.vip"
+msgstr ""
+
+#. Description of the plugin
+#: cohost.php
+msgid "Show your Cohost events on your own WordPress site — your branding, your domain, your audience. Embed the events list anywhere with a shortcode and click through to per-event profile pages."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:249
+msgid "[Cohost] Event name — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:267
+msgid "[Cohost] Event date — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:354
+msgid "[Cohost] Event flyer — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:383
+msgid "[Cohost] Event venue — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:406
+msgid "[Cohost] Event summary — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:418
+msgid "[Cohost] Event content — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:439
+msgid "[Cohost] Event tickets — no event in scope."
+msgstr ""
+
+#: includes/class-cohost-blocks.php:442
+#: templates/event-profile.php:86
+msgid "Get tickets"
+msgstr ""
+
+#: includes/class-cohost-settings.php:34
+msgid "Settings"
+msgstr ""
+
+#: includes/class-cohost-settings.php:129
+msgid "Cohost cache cleared."
+msgstr ""
+
+#: includes/class-cohost-settings.php:143
+msgid "Your events on your site — your branding, your domain, your audience."
+msgstr ""
+
+#: includes/class-cohost-settings.php:146
+msgid "Connect your WordPress site to Cohost with a personal API token, then drop the shortcodes onto any page."
+msgstr ""
+
+#: includes/class-cohost-settings.php:148
+msgid "Connection status"
+msgstr ""
+
+#: includes/class-cohost-settings.php:151
+#: includes/class-cohost-settings.php:165
+#: includes/class-cohost-settings.php:169
+msgid "API token"
+msgstr ""
+
+#: includes/class-cohost-settings.php:154
+msgid "API token configured."
+msgstr ""
+
+#: includes/class-cohost-settings.php:156
+msgid "No API token set."
+msgstr ""
+
+#: includes/class-cohost-settings.php:166
+msgid "Paste a personal access token from your Cohost dashboard."
+msgstr ""
+
+#: includes/class-cohost-settings.php:172
+msgid "Stored in wp_options. Sent as Bearer token on every API call."
+msgstr ""
+
+#: includes/class-cohost-settings.php:176
+msgid "API base URL"
+msgstr ""
+
+#: includes/class-cohost-settings.php:179
+msgid "Includes the API version path (e.g. /v1). Override only if pointing at a non-production Cohost API."
+msgstr ""
+
+#: includes/class-cohost-settings.php:184
+#: assets/js/blocks.js:114
+#: assets/js/blocks.js:229
+msgid "Display"
+msgstr ""
+
+#: includes/class-cohost-settings.php:185
+msgid "Use two separate pages so you can author the surrounding content for each one (e.g. a hero banner above the list, a signup form below the profile). Both pages are normal WordPress pages — edit them like any other."
+msgstr ""
+
+#: includes/class-cohost-settings.php:188
+#: includes/class-cohost-templates.php:158
+msgid "Events list page"
+msgstr ""
+
+#: includes/class-cohost-settings.php:194
+msgid "— None —"
+msgstr ""
+
+#: includes/class-cohost-settings.php:199
+msgid "The page that hosts the grid. Add the [cohost_events] shortcode to it."
+msgstr ""
+
+#: includes/class-cohost-settings.php:203
+#: includes/class-cohost-templates.php:168
+msgid "Event profile page"
+msgstr ""
+
+#: includes/class-cohost-settings.php:209
+msgid "— Use events list page —"
+msgstr ""
+
+#: includes/class-cohost-settings.php:214
+msgid "The page that displays a single event. Add the [cohost_event] shortcode to it (no id attribute — it is read from the URL). Cards from the list page link here. If left blank, the events list page is reused for both list and profile."
+msgstr ""
+
+#: includes/class-cohost-settings.php:220
+msgid "Advanced"
+msgstr ""
+
+#: includes/class-cohost-settings.php:223
+msgid "Templates manifest URL"
+msgstr ""
+
+#: includes/class-cohost-settings.php:226
+msgid "JSON manifest of templates that appear on the Templates page. Defaults to the Cohost-hosted manifest. Override only for testing."
+msgstr ""
+
+#: includes/class-cohost-settings.php:235
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/class-cohost-settings.php:236
+msgid "Renders an events grid. All attributes are optional:"
+msgstr ""
+
+#: includes/class-cohost-settings.php:239
+msgid "Attribute"
+msgstr ""
+
+#: includes/class-cohost-settings.php:239
+msgid "Description"
+msgstr ""
+
+#: includes/class-cohost-settings.php:239
+msgid "Example"
+msgstr ""
+
+#: includes/class-cohost-settings.php:242
+msgid "Events per page (default 12)"
+msgstr ""
+
+#: includes/class-cohost-settings.php:243
+msgid "Grid columns 1–6 (default 3) — display only"
+msgstr ""
+
+#: includes/class-cohost-settings.php:244
+msgid "ISO date range"
+msgstr ""
+
+#: includes/class-cohost-settings.php:245
+msgid "Sort field + direction"
+msgstr ""
+
+#: includes/class-cohost-settings.php:248
+msgid "Example combining several:"
+msgstr ""
+
+#: includes/class-cohost-settings.php:251
+msgid "Renders a single event profile. The id attribute accepts EITHER an event ID or an event slug — the API resolves both at the same endpoint."
+msgstr ""
+
+#: includes/class-cohost-settings.php:253
+msgid "or"
+msgstr ""
+
+#: includes/class-cohost-settings.php:259
+msgid "Clear API cache"
+msgstr ""
+
+#: includes/class-cohost-shortcodes.php:115
+msgid "No event selected."
+msgstr ""
+
+#: includes/class-cohost-shortcodes.php:125
+msgid "Event not found."
+msgstr ""
+
+#. translators: %s: error message returned by the Cohost API.
+#: includes/class-cohost-shortcodes.php:260
+#, php-format
+msgid "Cohost error: %s"
+msgstr ""
+
+#: includes/class-cohost-shortcodes.php:262
+msgid "Events are temporarily unavailable."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:107
+msgid "Simple grid"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:108
+msgid "Just the events grid — three columns, twelve events per page."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:117
+msgid "Hero + grid"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:118
+msgid "A heading + intro paragraph above the events grid."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:133
+msgid "Standard"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:134
+msgid "The default layout — flyer, name, date, venue, summary, content, tickets."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:149
+msgid "Magazine"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:150
+msgid "Wide hero flyer, two-column body — name + date + venue on the left, summary + content on the right."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:172
+msgid "Poster"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:173
+msgid "Big flyer, prominent name and date, bold ticket button, content below."
+msgstr ""
+
+#: includes/class-cohost-template-library.php:187
+msgid "Minimal"
+msgstr ""
+
+#: includes/class-cohost-template-library.php:188
+msgid "Name, date, content. No image, no meta — for events that need text-only treatment."
+msgstr ""
+
+#: includes/class-cohost-templates.php:25
+#: includes/class-cohost-templates.php:26
+#: includes/class-cohost-templates.php:144
+msgid "Templates"
+msgstr ""
+
+#: includes/class-cohost-templates.php:64
+msgid "Template not found."
+msgstr ""
+
+#: includes/class-cohost-templates.php:77
+msgid "Event"
+msgstr ""
+
+#: includes/class-cohost-templates.php:77
+msgid "Events"
+msgstr ""
+
+#: includes/class-cohost-templates.php:145
+msgid "Pick a starting layout. One click to apply — edit afterwards in the block editor."
+msgstr ""
+
+#: includes/class-cohost-templates.php:150
+msgid "Templates are pre-composed block layouts. Pick one for your events list page and one for your event profile page, then customize freely."
+msgstr ""
+
+#: includes/class-cohost-templates.php:154
+msgid "Refresh from server"
+msgstr ""
+
+#. translators: %s: title of the currently configured WP page.
+#: includes/class-cohost-templates.php:161
+#: includes/class-cohost-templates.php:171
+#, php-format
+msgid "Currently using: %s"
+msgstr ""
+
+#: includes/class-cohost-templates.php:163
+#: includes/class-cohost-templates.php:173
+msgid "No page configured — applying a template will create one."
+msgstr ""
+
+#: includes/class-cohost-templates.php:183
+msgid "No templates available."
+msgstr ""
+
+#: includes/class-cohost-templates.php:201
+msgid "Ships with the plugin (works offline)."
+msgstr ""
+
+#: includes/class-cohost-templates.php:201
+msgid "starter"
+msgstr ""
+
+#: includes/class-cohost-templates.php:207
+msgid "This will replace the contents of the target page. Continue?"
+msgstr ""
+
+#: includes/class-cohost-templates.php:211
+msgid "Apply"
+msgstr ""
+
+#: includes/class-cohost-templates.php:227
+#: includes/class-cohost-templates.php:236
+msgid "View page"
+msgstr ""
+
+#: includes/class-cohost-templates.php:229
+msgid "Template applied. Your page now uses the new layout."
+msgstr ""
+
+#: includes/class-cohost-templates.php:238
+msgid "Template applied — a new page was created and configured for you."
+msgstr ""
+
+#: includes/class-cohost-templates.php:241
+msgid "Templates refreshed from the server."
+msgstr ""
+
+#: includes/class-cohost-templates.php:244
+msgid "Unknown error."
+msgstr ""
+
+#. translators: %s: detailed error message.
+#: includes/class-cohost-templates.php:246
+#, php-format
+msgid "Could not apply template: %s"
+msgstr ""
+
+#: templates/event-profile.php:14
+#: templates/events-list.php:24
+msgid "Untitled event"
+msgstr ""
+
+#: templates/event-profile.php:40
+msgid "All events"
+msgstr ""
+
+#: templates/event-profile.php:56
+msgid "Starts"
+msgstr ""
+
+#: templates/event-profile.php:60
+msgid "Ends"
+msgstr ""
+
+#: templates/event-profile.php:64
+msgid "Venue"
+msgstr ""
+
+#: templates/events-list.php:16
+msgid "No events to display."
+msgstr ""
+
+#: templates/events-list.php:76
+msgid "Previous"
+msgstr ""
+
+#: templates/events-list.php:79
+msgid "Next"
+msgstr ""
+
+#: assets/js/blocks.js:45
+msgid "Event ID (override)"
+msgstr ""
+
+#: assets/js/blocks.js:46
+msgid "Leave blank to use the event from the page URL (the standard setup on the Event profile page). Set this only when you want to pin a specific event — e.g. a featured event on the homepage."
+msgstr ""
+
+#: assets/js/blocks.js:54
+msgid "ServerSideRender component unavailable."
+msgstr ""
+
+#: assets/js/blocks.js:63
+msgid "Event name"
+msgstr ""
+
+#: assets/js/blocks.js:66
+msgid "The event title. Pick a heading level (H1 by default)."
+msgstr ""
+
+#: assets/js/blocks.js:77
+msgid "Heading"
+msgstr ""
+
+#: assets/js/blocks.js:79
+msgid "Heading level"
+msgstr ""
+
+#: assets/js/blocks.js:92
+#: assets/js/blocks.js:150
+#: assets/js/blocks.js:208
+#: assets/js/blocks.js:241
+#: assets/js/blocks.js:261
+#: assets/js/blocks.js:282
+#: assets/js/blocks.js:310
+msgid "Event source"
+msgstr ""
+
+#: assets/js/blocks.js:106
+msgid "Event date"
+msgstr ""
+
+#: assets/js/blocks.js:109
+msgid "Event start / end dates. Choose what to show and how to format it."
+msgstr ""
+
+#: assets/js/blocks.js:116
+msgid "What to show"
+msgstr ""
+
+#: assets/js/blocks.js:119
+msgid "Compact (start full + end time only when same day)"
+msgstr ""
+
+#: assets/js/blocks.js:120
+msgid "Both start and end (full)"
+msgstr ""
+
+#: assets/js/blocks.js:121
+msgid "Start only"
+msgstr ""
+
+#: assets/js/blocks.js:122
+msgid "End only"
+msgstr ""
+
+#: assets/js/blocks.js:127
+msgid "Format"
+msgstr ""
+
+#: assets/js/blocks.js:130
+msgid "Date and time"
+msgstr ""
+
+#: assets/js/blocks.js:131
+msgid "Date only"
+msgstr ""
+
+#: assets/js/blocks.js:132
+msgid "Time only"
+msgstr ""
+
+#: assets/js/blocks.js:133
+msgid "Custom (PHP format string)"
+msgstr ""
+
+#: assets/js/blocks.js:138
+msgid "Custom format"
+msgstr ""
+
+#: assets/js/blocks.js:139
+msgid "PHP date() format. Examples: \"M j, Y g:ia\" → \"Jan 1, 2026 9:00pm\", \"n/j/Y g:ia\" → \"1/1/2026 9:00pm\"."
+msgstr ""
+
+#: assets/js/blocks.js:144
+msgid "Separator"
+msgstr ""
+
+#: assets/js/blocks.js:145
+msgid "String between start and end. Default \" – \"."
+msgstr ""
+
+#: assets/js/blocks.js:164
+msgid "Event flyer"
+msgstr ""
+
+#: assets/js/blocks.js:167
+msgid "The event cover image."
+msgstr ""
+
+#: assets/js/blocks.js:172
+msgid "Image"
+msgstr ""
+
+#: assets/js/blocks.js:174
+msgid "Size"
+msgstr ""
+
+#: assets/js/blocks.js:177
+msgid "Thumbnail"
+msgstr ""
+
+#: assets/js/blocks.js:178
+msgid "Small"
+msgstr ""
+
+#: assets/js/blocks.js:179
+msgid "Medium"
+msgstr ""
+
+#: assets/js/blocks.js:180
+msgid "Large"
+msgstr ""
+
+#: assets/js/blocks.js:181
+msgid "Full width"
+msgstr ""
+
+#: assets/js/blocks.js:186
+msgid "Aspect ratio"
+msgstr ""
+
+#: assets/js/blocks.js:189
+msgid "Auto (original)"
+msgstr ""
+
+#: assets/js/blocks.js:198
+msgid "Alignment"
+msgstr ""
+
+#: assets/js/blocks.js:201
+msgid "Left"
+msgstr ""
+
+#: assets/js/blocks.js:202
+msgid "Center"
+msgstr ""
+
+#: assets/js/blocks.js:203
+msgid "Right"
+msgstr ""
+
+#: assets/js/blocks.js:222
+msgid "Event venue"
+msgstr ""
+
+#: assets/js/blocks.js:231
+msgid "Show"
+msgstr ""
+
+#: assets/js/blocks.js:234
+msgid "Name and address"
+msgstr ""
+
+#: assets/js/blocks.js:235
+msgid "Name only"
+msgstr ""
+
+#: assets/js/blocks.js:236
+msgid "Address only"
+msgstr ""
+
+#: assets/js/blocks.js:255
+msgid "Event summary"
+msgstr ""
+
+#: assets/js/blocks.js:275
+msgid "Event content"
+msgstr ""
+
+#: assets/js/blocks.js:278
+msgid "The structured content blocks (description, gallery, FAQ, etc.) authored on the Cohost dashboard."
+msgstr ""
+
+#: assets/js/blocks.js:296
+msgid "Event tickets"
+msgstr ""
+
+#: assets/js/blocks.js:303
+msgid "Button"
+msgstr ""
+
+#: assets/js/blocks.js:305
+msgid "Button label"
+msgstr ""
