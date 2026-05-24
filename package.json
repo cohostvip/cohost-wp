@@ -3,6 +3,14 @@
 	"version": "0.1.0",
 	"private": true,
 	"description": "Local WordPress dev environment for the Cohost WP plugin. Boots WordPress + MySQL in Docker via @wordpress/env. The published plugin lives in ./cohost.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cohostvip/cohost-wp.git"
+	},
+	"homepage": "https://github.com/cohostvip/cohost-wp#readme",
+	"bugs": {
+		"url": "https://github.com/cohostvip/cohost-wp/issues"
+	},
 	"scripts": {
 		"start": "wp-env start",
 		"stop": "wp-env stop",
