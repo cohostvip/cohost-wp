@@ -1,18 +1,18 @@
 <p align="left">
-  <img src="cohost-wp/assets/img/icon.svg" alt="Cohost" width="72" height="72" />
+  <img src="cohost/assets/img/icon.svg" alt="Cohost" width="72" height="72" />
 </p>
 
 # Cohost WordPress Plugin
 
 > **Show your Cohost events on your own WordPress site — your branding, your domain, your audience.** No iframes. No redirect to a third-party ticketing page. The list and per-event profile render natively in your theme.
 
-The plugin source lives in [`./cohost-wp`](./cohost-wp). Zip that directory to install it on a WordPress site.
+The plugin source lives in [`./cohost`](./cohost). Zip that directory to install it on a WordPress site.
 
 ## About Cohost
 
 Cohost is a headless platform for event managers — it handles events, attendees, ticketing, scanning, check-in, and workflows so the storefront (WordPress, Webflow, your Next.js site, etc.) can stay yours. This plugin is the WordPress storefront.
 
-The brand mark is the lowercase **"c"** with the orange square dot at the baseline right. The square is always `#f97316` and shows up across the plugin (button accent, card hover, logo). Full brand guide: [`BRAND.md`](cohost-wp/BRAND.md) (a copy lives in the plugin folder so it ships with the bundle).
+The brand mark is the lowercase **"c"** with the orange square dot at the baseline right. The square is always `#f97316` and shows up across the plugin (button accent, card hover, logo). Full brand guide: [`BRAND.md`](docs/BRAND.md).
 
 ## Features
 
@@ -31,8 +31,8 @@ The brand mark is the lowercase **"c"** with the orange square dot at the baseli
    cd oss/cohost-wp
    npm run zip
    ```
-   (Or do it manually: `cd oss/cohost-wp && zip -r cohost-wp.zip cohost-wp`.)
-2. In WP Admin, go to **Plugins → Add New → Upload Plugin** and upload `cohost-wp.zip`.
+   (Or do it manually: `cd oss/cohost-wp && zip -r cohost.zip cohost`.)
+2. In WP Admin, go to **Plugins → Add New → Upload Plugin** and upload `cohost.zip`.
 3. Activate.
 4. Open **Cohost** in the admin menu (or **Settings → Cohost**):
    - Paste an API token and save.
@@ -76,7 +76,7 @@ npm run lint:php
 npm run zip
 ```
 
-The plugin source at `./cohost-wp` is **bind-mounted** into the container at `wp-content/plugins/cohost-wp/`, so edits are reflected on refresh — no rebuild loop.
+The plugin source at `./cohost` is **bind-mounted** into the container at `wp-content/plugins/cohost/`, so edits are reflected on refresh — no rebuild loop.
 
 ### Logging in
 
@@ -109,7 +109,7 @@ Override the base URL in **Settings → Cohost** (e.g. `http://host.docker.inter
 
 | Path | What it is |
 |---|---|
-| `oss/cohost-wp/cohost-wp/` | the WordPress plugin (the only thing that ships) |
+| `oss/cohost-wp/cohost/` | the WordPress plugin (the only thing that ships) |
 | `oss/cohost-wp/.wp-env.json` | pinned WP + PHP versions, port config, plugin mount |
 | `oss/cohost-wp/.dev/htaccess` | mounted as the WP root `.htaccess` so pretty permalinks work |
 | `oss/cohost-wp/package.json` | dev-only scripts; **not** part of `pnpm-workspace.yaml` |
@@ -174,8 +174,8 @@ The template system has its own design + planning docs under [`docs/templates/`]
 
 The plugin ships the dark "C" app icon and dark wordmark from [cohost-branding](../cohost-branding):
 
-- `cohost-wp/assets/img/icon.svg` / `icon.png` — app icon, dark background `#161616`, light "c", orange `#f97316` square. Used as the admin header logo.
-- `cohost-wp/assets/img/wordmark.svg` — full "cohost" wordmark, dark variant.
+- `cohost/assets/img/icon.svg` / `icon.png` — app icon, dark background `#161616`, light "c", orange `#f97316` square. Used as the admin header logo.
+- `cohost/assets/img/wordmark.svg` — full "cohost" wordmark, dark variant.
 
 Per the brand guide:
 
@@ -186,7 +186,7 @@ Per the brand guide:
 ## Architecture
 
 ```
-cohost-wp.php                       # plugin header, defines, hooks
+cohost.php                          # plugin header, defines, hooks
 includes/
   class-cohost-plugin.php           # singleton, wires modules
   class-cohost-api-client.php       # HTTP client, bearer-token auth, transient cache
@@ -201,7 +201,6 @@ assets/
   css/admin.css                     # settings page styles
   img/icon.svg / icon.png           # app icon (dark variant)
   img/wordmark.svg                  # wordmark (dark variant)
-BRAND.md                            # bundled brand guide
 ```
 
 ## License

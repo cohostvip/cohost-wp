@@ -2,7 +2,7 @@
 	"name": "cohost-wp-dev",
 	"version": "0.1.0",
 	"private": true,
-	"description": "Local WordPress dev environment for the Cohost WP plugin. Boots WordPress + MySQL in Docker via @wordpress/env. The published plugin lives in ./cohost-wp.",
+	"description": "Local WordPress dev environment for the Cohost WP plugin. Boots WordPress + MySQL in Docker via @wordpress/env. The published plugin lives in ./cohost.",
 	"scripts": {
 		"start": "wp-env start",
 		"stop": "wp-env stop",
@@ -11,7 +11,7 @@
 		"destroy": "wp-env destroy",
 		"logs": "wp-env logs all",
 		"cli": "wp-env run cli wp",
-		"activate": "wp-env run cli wp plugin activate cohost-wp",
+		"activate": "wp-env run cli wp plugin activate cohost",
 		"flush": "wp-env run cli wp rewrite flush",
 		"lint:php": "docker run --rm -v \"$PWD/cohost:/src\" -w /src php:8.2-cli sh -c 'for f in cohost.php uninstall.php includes/*.php templates/*.php; do php -l \"$f\" || exit 1; done'",
 		"zip": "rm -f cohost.zip && zip -r cohost.zip cohost -x '*.DS_Store' -x 'cohost/.*'"
