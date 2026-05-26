@@ -3,8 +3,8 @@ Contributors: cohost
 Tags: events, ticketing, event management, calendar, cohost
 Requires at least: 5.8
 Tested up to: 7.0
-Requires PHP: 7.4
-Stable tag: 0.1.1
+Requires PHP: 7.0
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ The plugin caches API responses in WP transients (60-second TTL for events, 15-m
 For Cohost's privacy policy covering data on the Cohost side, see https://cohost.vip/legal/privacy.
 
 == Changelog ==
+
+= 0.1.2 =
+* Lower the minimum PHP requirement to 7.0 (was 7.4) so the plugin installs on older hosting; the two PHP 7.4 arrow functions were rewritten as closures.
+* Add the WordPress.org plugin icon (replaces the auto-generated placeholder pattern).
 
 = 0.1.1 =
 * Fix privacy policy URL.

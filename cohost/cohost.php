@@ -2,9 +2,9 @@
 /**
  * Plugin Name:       Cohost
  * Description:       Show your Cohost events on your own WordPress site — your branding, your domain, your audience. Embed the events list anywhere with a shortcode and click through to per-event profile pages.
- * Version:           0.1.1
+ * Version:           0.1.2
  * Requires at least: 5.8
- * Requires PHP:      7.4
+ * Requires PHP:      7.0
  * Author:            Cohost
  * Author URI:        https://cohost.vip
  * License:           GPLv2 or later

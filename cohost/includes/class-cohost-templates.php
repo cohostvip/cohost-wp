@@ -144,8 +144,12 @@ class Cohost_Templates {
 		}
 
 		$templates = Cohost_Template_Library::all();
-		$listings  = array_values( array_filter( $templates, static fn( $t ) => 'listing' === $t['type'] ) );
-		$profiles  = array_values( array_filter( $templates, static fn( $t ) => 'profile' === $t['type'] ) );
+		$listings  = array_values( array_filter( $templates, static function ( $t ) {
+			return 'listing' === $t['type'];
+		} ) );
+		$profiles  = array_values( array_filter( $templates, static function ( $t ) {
+			return 'profile' === $t['type'];
+		} ) );
 
 		$events_page_id = intval( get_option( 'cohost_wp_events_page_id', 0 ) );
 		$event_page_id  = intval( get_option( 'cohost_wp_event_page_id', 0 ) );
