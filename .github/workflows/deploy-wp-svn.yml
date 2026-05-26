@@ -1,0 +1,123 @@
+name: Deploy to WordPress.org
+
+# Publishes the plugin to the wordpress.org SVN repo when a GitHub Release is
+# published. Pushes plugin files to trunk/, the listing assets (icon/banner/
+# screenshots) to assets/, and snapshots the release into tags/<version>/.
+#
+# Auth:
+#   secrets.WP_SVN          -> wordpress.org SVN password (required)
+#   vars.WP_SVN_USERNAME    -> wordpress.org SVN username (optional; defaults to "cohost")
+#
+# The SVN commit message is taken from the GitHub Release body, falling back to
+# "Release <version>". Run manually (workflow_dispatch) with dry_run=true to
+# verify the diff without committing.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (build + show svn diff, skip commit)'
+        type: boolean
+        default: true
+
+concurrency:
+  group: wporg-deploy
+  cancel-in-progress: false
+
+env:
+  SLUG: cohost
+  PLUGIN_DIR: cohost   # plugin source lives in this subfolder of the repo
+  ASSETS_SRC: assets   # wp.org listing assets (icon-*.png, icon.svg, banner-*, screenshot-*)
+
+jobs:
+  deploy:
+    name: Deploy to WordPress.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve and validate version
+        id: ver
+        run: |
+          set -euo pipefail
+          VERSION="$(grep -ioP '^\s*\*\s*Version:\s*\K[0-9][0-9A-Za-z.\-]*' "$PLUGIN_DIR/cohost.php" | head -n1)"
+          if [ -z "$VERSION" ]; then echo "::error::Could not read 'Version:' header from $PLUGIN_DIR/cohost.php"; exit 1; fi
+          STABLE="$(grep -ioP '^Stable tag:\s*\K.*' "$PLUGIN_DIR/readme.txt" | tr -d '[:space:]')"
+          if [ "$STABLE" != "$VERSION" ]; then
+            echo "::error::readme.txt Stable tag ($STABLE) does not match plugin Version ($VERSION). Bump both before releasing."; exit 1
+          fi
+          if [ "${{ github.event_name }}" = "release" ]; then
+            TAG="${GITHUB_REF_NAME#v}"
+            if [ "$TAG" != "$VERSION" ]; then
+              echo "::error::Release tag ($GITHUB_REF_NAME) does not match plugin Version ($VERSION)."; exit 1
+            fi
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Deploying version $VERSION"
+
+      - name: Install Subversion + rsync
+        run: sudo apt-get update && sudo apt-get install -y subversion rsync
+
+      - name: Deploy to SVN
+        env:
+          SVN_USERNAME: ${{ vars.WP_SVN_USERNAME || 'cohost' }}
+          SVN_PASSWORD: ${{ secrets.WP_SVN }}
+          VERSION: ${{ steps.ver.outputs.version }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SVN_PASSWORD:-}" ]; then
+            echo "::error::Secret WP_SVN is empty or not available to this repo. Set the wordpress.org SVN password as the WP_SVN secret."; exit 1
+          fi
+
+          SVN_URL="https://plugins.svn.wordpress.org/${SLUG}"
+          WORK="$RUNNER_TEMP/svn"
+          echo "Checking out $SVN_URL"
+          svn checkout "$SVN_URL" "$WORK" --non-interactive
+
+          mkdir -p "$WORK/trunk" "$WORK/assets"
+
+          # Sync plugin files into trunk/ and listing assets into assets/.
+          # --exclude='.svn' is critical so rsync --delete never wipes SVN metadata.
+          rsync -a --delete \
+            --exclude='.svn' --exclude='.git' --exclude='.github' --exclude='.DS_Store' \
+            "$PLUGIN_DIR"/ "$WORK/trunk/"
+          rsync -a --delete \
+            --exclude='.svn' --exclude='.DS_Store' \
+            "$ASSETS_SRC"/ "$WORK/assets/"
+
+          cd "$WORK"
+          # Schedule new/changed files, then schedule deletions (svn marks removed files with '!').
+          svn add --force trunk assets --quiet
+          svn status | { grep '^!' || true; } | sed -e 's/^!//' -e 's/^[[:space:]]*//' | while IFS= read -r f; do
+            [ -n "$f" ] && svn delete --quiet "$f"
+          done
+
+          # Snapshot into tags/<version> (skip if it already exists).
+          if [ -d "tags/$VERSION" ]; then
+            echo "tags/$VERSION already exists in SVN; leaving the existing tag untouched."
+          else
+            svn copy trunk "tags/$VERSION" --quiet
+          fi
+
+          MSG="${RELEASE_BODY:-}"
+          if [ -z "${MSG//[[:space:]]/}" ]; then MSG="Release $VERSION"; fi
+
+          echo "----- svn status -----"
+          svn status
+          echo "----- commit message -----"
+          echo "$MSG"
+
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "DRY RUN: skipping svn commit."
+            exit 0
+          fi
+
+          svn commit \
+            --username "$SVN_USERNAME" --password "$SVN_PASSWORD" \
+            --non-interactive --no-auth-cache \
+            -m "$MSG"
+          echo "Deployed $SLUG $VERSION to https://wordpress.org/plugins/$SLUG/"
