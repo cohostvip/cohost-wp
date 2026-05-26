@@ -2,6 +2,7 @@
 	"name": "cohost-wp-dev",
 	"version": "0.1.0",
 	"private": true,
+	"license": "GPL-2.0-or-later",
 	"description": "Local WordPress dev environment for the Cohost WP plugin. Boots WordPress + MySQL in Docker via @wordpress/env. The published plugin lives in ./cohost.",
 	"repository": {
 		"type": "git",

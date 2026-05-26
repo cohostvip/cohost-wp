@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv2-blue.svg" alt="License: GPLv2 or later" /></a>
   <a href="https://cohost.vip"><img src="https://img.shields.io/badge/built%20by-Cohost-f97316.svg" alt="Built by Cohost" /></a>
 </p>
 
@@ -217,7 +217,7 @@ assets/
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+GPLv2 or later — see [LICENSE](LICENSE). Same license as WordPress core, as required for plugins distributed via the WordPress.org directory.
 
 ---
 
